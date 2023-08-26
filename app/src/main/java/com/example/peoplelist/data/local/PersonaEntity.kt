@@ -1,7 +1,14 @@
-package com.example.peoplelist.data.remote
+package com.example.peoplelist.data.local
 
-data class People(
-    val uuid: String,
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.example.peoplelist.data.remote.Location
+import com.example.peoplelist.data.remote.Login
+import com.example.peoplelist.data.remote.Name
+
+@Entity(tableName = "persona_table")
+data class PersonaEntity(
+    @PrimaryKey val uuid: String,
     val gender: String,
     val name: Name,
     val location: Location,

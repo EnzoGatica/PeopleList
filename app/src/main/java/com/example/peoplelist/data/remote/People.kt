@@ -1,25 +1,34 @@
 package com.example.peoplelist.data.remote
 
+import android.icu.text.IDNA
+import com.google.gson.annotations.SerializedName
+import java.util.UUID
+
 data class People(
-    val uuid: String,
-    val gender: String,
-    val name: Name,
-    val location: Location,
-    val email: String,
-    val login: Login,
-    val dob: Dob,
-    val registered: Registered,
-    val phone: String,
-    val cell: String,
-    val id: Id,
-    val picture: Picture,
-    val nat: String
+    @SerializedName("results" ) var results : ArrayList<Results> = arrayListOf(),
+    @SerializedName("info"    ) var info    : IDNA.Info? = IDNA.Info(),
+)
+
+data class Results (
+    @SerializedName("gender"     ) var gender     : String?     = null,
+    @SerializedName("name"       ) var name       : Name?       = null,
+    @SerializedName("location"   ) var location   : Location?   = null,
+    @SerializedName("email"      ) var email      : String?     = null,
+    @SerializedName("login"      ) var login      : Login?      = null,
+    @SerializedName("dob"        ) var dob        : Dob?        = null,
+    @SerializedName("registered" ) var registered : Registered? = null,
+    @SerializedName("phone"      ) var phone      : String?     = null,
+    @SerializedName("cell"       ) var cell       : String?     = null,
+    @SerializedName("id"         ) var id         : Id?         = null,
+    @SerializedName("picture"    ) var picture    : Picture?    = null,
+    @SerializedName("nat"        ) var nat        : String?     = null
+
 )
 
 data class Name(
-    val title: String,
-    val first: String,
-    val last: String
+    val title: String?,
+    val first: String?,
+    val last: String?
 )
 
 data class Location(
@@ -48,7 +57,7 @@ data class Timezone(
 )
 
 data class Login(
-
+    val uuid: String,
     val username: String,
     val password: String,
     val salt: String,

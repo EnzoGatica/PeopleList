@@ -2,15 +2,14 @@ package com.example.peoplelist.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.peoplelist.data.remote.Location
-import com.example.peoplelist.data.remote.Login
-import com.example.peoplelist.data.remote.Name
 
 @Entity(tableName = "persona_table")
 data class PersonaEntity(
     @PrimaryKey val uuid: String,
-    val gender: String,
-    val name: Name,
+    val gender: String?,
+    val title: String?,
+    val large:String?
+    /*
     val location: Location,
     val email: String,
     val login: Login,
@@ -21,14 +20,19 @@ data class PersonaEntity(
     val id: Id,
     val picture: Picture,
     val nat: String
-)
 
+     */
+)
+/*
 data class Name(
-    val title: String,
-    val first: String,
-    val last: String
+    val title: String?,
+    val first: String?,
+    val last: String?
 )
 
+ */
+
+/*
 data class Location(
     val street: Street,
     val city: String,
@@ -84,3 +88,5 @@ data class Picture(
     val medium: String,
     val thumbnail: String
 )
+
+ */

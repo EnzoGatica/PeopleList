@@ -35,7 +35,7 @@ class AdapterPeople: RecyclerView.Adapter<AdapterPeople.ItemPeopleViewHolder>() 
 
     class ItemPeopleViewHolder(val peopleVista: ItemPeopleBinding): RecyclerView.ViewHolder(peopleVista.root) {
         fun bind(persona : PersonaEntity){
-            peopleVista.imagenTerreno.load(persona.picture.large)
+            peopleVista.imagenTerreno.load(persona.large)
         }
     }
 }

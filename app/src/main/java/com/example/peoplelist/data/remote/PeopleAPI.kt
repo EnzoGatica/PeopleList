@@ -8,6 +8,6 @@ import retrofit2.http.GET
 interface PeopleAPI {
 
     @GET("?results=100")
-    suspend fun getDataPeople(): Response<List<People>>
+    suspend fun getDataPeople(): Response<People>
 
 }

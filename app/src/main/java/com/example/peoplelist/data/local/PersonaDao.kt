@@ -13,8 +13,8 @@ interface PersonaDao {
     suspend fun insertPersona(personaEntity: PersonaEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun inserAllPeople(peopleList: List<PersonaEntity>)
+    suspend fun inserAllPeople(peopleList: PersonaEntity)
 
-    @Query("Select * From persona_table order by name ASC")
+    @Query("Select * From persona_table")
     fun getAllPeople(): LiveData<List<PersonaEntity>>
 }

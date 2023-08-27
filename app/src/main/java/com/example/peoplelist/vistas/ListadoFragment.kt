@@ -36,7 +36,9 @@ class ListadoFragment : Fragment() {
 
         binding.recyclePeople.adapter  = adapter
         peopleVM.peopleLiveData().observe(viewLifecycleOwner){
-            adapter.setData(it)
+            if (it != null) {
+                adapter.setData(it)
+            }
         }
     }
 

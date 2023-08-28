@@ -6,9 +6,15 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "persona_table")
 data class PersonaEntity(
     @PrimaryKey val uuid: String,
-    val gender: String?,
     val title: String?,
-    val large:String?
+    val first: String?,
+    val last: String?,
+    val gender: String?,
+    val email: String?,
+    val age: Int?,
+    val cell: String?,
+    val large:String?,
+    val country: String?
     /*
     val location: Location,
     val email: String,

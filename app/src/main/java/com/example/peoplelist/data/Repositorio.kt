@@ -50,9 +50,15 @@ class Repositorio(private val peopleAPI: PeopleAPI, private val personaDao: Pers
 
     private fun Results.transformarEntity(): PersonaEntity = PersonaEntity(
         this.login!!.uuid,
-        this.gender,
         this.name?.title,
-        this.picture?.large
+        this.name?.first,
+        this.name?.last,
+        this.gender,
+        this.email,
+        this.dob?.age,
+        this.cell,
+        this.picture?.large,
+        this.location?.country
     )
 
     /*

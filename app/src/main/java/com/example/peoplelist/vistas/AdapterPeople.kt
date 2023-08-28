@@ -35,6 +35,10 @@ class AdapterPeople: RecyclerView.Adapter<AdapterPeople.ItemPeopleViewHolder>() 
 
     class ItemPeopleViewHolder(val peopleVista: ItemPeopleBinding): RecyclerView.ViewHolder(peopleVista.root) {
         fun bind(persona : PersonaEntity){
+            peopleVista.txtName.text = persona.title +". "+persona.first + " " +persona.last
+            peopleVista.txtPhone.text = "Mail: " + persona.email
+            peopleVista.txtEdad.text = "Age: " + persona.age.toString()
+            peopleVista.txtLocation.text  = "Country: "+ persona.country
             peopleVista.imagenTerreno.load(persona.large)
         }
     }
